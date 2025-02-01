@@ -11,7 +11,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,9 +25,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#navbarNav">Home</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -41,6 +41,9 @@
             <a class="nav-link" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#certificates">Certificates</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
@@ -49,7 +52,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero-section text-white text-center py-5">
+  <header id="home" class="hero-section text-white text-center py-5">
     <div class="container">
       <div class="hero-content animate__animated animate__fadeIn">
         <img src="./img/aftab.jpg" alt="Aftab Alam" class="rounded-circle mb-3" width="150" height="150">
@@ -57,6 +60,9 @@
         <p class="lead">Professional Electrician & Foreman Supervisor</p>
         <p class="lead">Expert in <span id="typed"></span></p>
         <a href="#contact" class="btn btn-primary btn-lg mt-3">Hire Me</a>
+        <a href="./resume.pdf" download class="btn btn-outline-light btn-lg mt-3 ms-3">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
       </div>
     </div>
   </header>
@@ -190,6 +196,42 @@
     </div>
   </section>
 
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 animate__animated animate__fadeIn">Certificates</h2>
+      <div class="row">
+        <div class="col-md-4 animate__animated animate__fadeInLeft">
+          <div class="card mb-3">
+            <img src="./img/certificate1.jpg" class="card-img-top" alt="Certificate 1">
+            <div class="card-body">
+              <h5 class="card-title">Electrical Safety Certification</h5>
+              <p class="card-text">Issued by Dubai Municipality, 2023.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+          <div class="card mb-3">
+            <img src="./img/certificate2.jpg" class="card-img-top" alt="Certificate 2">
+            <div class="card-body">
+              <h5 class="card-title">Advanced Wiring Techniques</h5>
+              <p class="card-text">Issued by Qatar Technical Institute, 2021.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInRight">
+          <div class="card mb-3">
+            <img src="./img/certificate3.jpg" class="card-img-top" alt="Certificate 3">
+            <div class="card-body">
+              <h5 class="card-title">Project Management in Construction</h5>
+              <p class="card-text">Issued by Saudi Binladin Group, 2015.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="py-5">
     <div class="container">
@@ -209,6 +251,11 @@
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="mailto:aftabalam@example.com" class="text-dark">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -241,6 +288,29 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
+      });
+    });
+
+    // Add animations on scroll
+    document.addEventListener("DOMContentLoaded", function () {
+      const animateElements = document.querySelectorAll(".animate__animated");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(entry.target.dataset.animate);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      animateElements.forEach((element) => {
+        observer.observe(element);
       });
     });
   </script>

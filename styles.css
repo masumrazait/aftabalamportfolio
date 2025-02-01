@@ -1,6 +1,7 @@
 /* Custom CSS */
 body {
     font-family: 'Poppins', sans-serif;
+    color: #333;
   }
   
   .hero-section {
@@ -38,4 +39,34 @@ body {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
+  }
+  
+  /* Additional Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .certificates .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .certificates .card img {
+    border-radius: 10px 10px 0 0;
   }
