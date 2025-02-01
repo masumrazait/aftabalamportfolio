@@ -1,4 +1,3 @@
-/* Custom CSS */
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
@@ -41,7 +40,6 @@ body {
     padding: 20px 0;
   }
   
-  /* Additional Styles */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -58,15 +56,6 @@ body {
   }
   
   .btn-outline-light:hover {
-    background-color: #f8f9fa;
+    background-color: #fff;
     color: #333;
-  }
-  
-  .certificates .card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .certificates .card img {
-    border-radius: 10px 10px 0 0;
   }
